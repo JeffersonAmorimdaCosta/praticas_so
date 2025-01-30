@@ -106,7 +106,9 @@ int main(void) {
                 cont--;
 
                 cout << "Executando processo "  << processo_atual.obterId() << " - Tempo restante: " << processo_atual.tempoRestante() << endl;
-                this_thread::sleep_for(chrono::milliseconds(500));
+                cout << "Comando: " << processo_atual.obterComando() << endl;
+                cout << "Usuario: " << processo_atual.obterUsuario() << endl;
+                this_thread::sleep_for(chrono::milliseconds(700));
             }
 
             if (finalizado) {
@@ -124,7 +126,6 @@ int main(void) {
 
     arquivo.close();
 
-    system("clear");
     cout << "Todos os processos foram executados com sucesso!" << endl;
 
      return 0;
